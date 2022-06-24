@@ -1,0 +1,55 @@
+.wrapper {
+  display: inline;
+  text-align: center;
+}
+.wrapper .static-txt {
+  color: #000;
+  font-size: 60px;
+  font-family: "Playfair Display", Georgia, serif;
+}
+.wrapper .dynamic-txts {
+  margin-left: 0px;
+  padding:0;
+  height: 70px;
+  line-height: 70px;
+  overflow: hidden;
+  font-family: "Playfair Display", Georgia, serif;
+}
+.dynamic-txts li {
+  color: pink;
+  list-style: none;
+  font-size: 60px;
+  position: relative;
+  top: 0;
+  animation: slide 6s steps(4) infinite;
+}
+@keyframes slide {
+  100% {
+    top: -280px;
+  }
+}
+.dynamic-txts li span {
+  position: relative;
+}
+.dynamic-txts li span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background:#FFFBFE;
+  border-left: 2px solid pink;
+  animation: typing 1.5s steps(10) infinite;
+}
+@keyframes typing {
+  100% {
+    left: 100%;
+    margin: 0 -35px 0 35px;
+  }
+}
+
+@media (max-width:480px){
+  .dynamic-txts li {
+    font-size: 50px;
+  }
+}
